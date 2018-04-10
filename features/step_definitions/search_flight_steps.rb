@@ -1,5 +1,5 @@
 
-When(/I insert a valid time range/) do 
+When(/^I insert a valid time range$/) do 
 	begin
 	#	@page.fill_valid_dates
 	rescue => e
@@ -15,7 +15,7 @@ When(/^I insert '(.*)' as destination$/) do |city|
 	end
 end
 
-When(/I click Search button/) do 
+When(/^I click Search button$/) do 
 	begin
 		@page.click_search
 	rescue => e
