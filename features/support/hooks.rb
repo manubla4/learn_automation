@@ -1,4 +1,3 @@
-require 'report_builder'
 
 
 AfterStep do |scenario|
@@ -18,15 +17,4 @@ After do |scenario|
 	end
 end
 
-at_exit do
-	ReportBuilder.configure do |config|
-		config.json_path = './output/'
-		config.report_path = './output/report'
-		config.report_types = [:html]
-		config.report_title = 'Results'
-		config.include_images = true
-#		config.additional_info = {browser: 'Chrome'}
-	end
-
-	ReportBuilder.build_report
 end
