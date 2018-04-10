@@ -16,5 +16,3 @@ After do |scenario|
 		embed("data:image/png;base64,#{encoded_img}",'image/png')
 	end
 end
-
-end
