@@ -1,4 +1,4 @@
-Feature: sign_in
+Feature: search_flight
 
 	Background:
 		Given a new 'chrome' browser
@@ -6,10 +6,10 @@ Feature: sign_in
 	# POSITIVE
 
 	@test_case 
-	Scenario: Verify sign in 
+	Scenario: Verify simple flight search
 		Given I navigate to homepage
 		When I insert a valid time range 
-		And I insert 'Budapest' as destination
+		And I insert 'Madrid' as destination
 		And I click Search button
         Then I see the flights available to go to 'Madrid' in the corresponding dates
 
