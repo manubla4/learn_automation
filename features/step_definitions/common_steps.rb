@@ -20,7 +20,7 @@ end
 
 Given(/^I navigate to homepage$/) do
 	begin
-        $browser.navigate.to "https://www.demoblaze.com/index.html"
+        $browser.navigate.to "https://www.phptravels.net/"
         @page = HomePage.new $browser
 		fail "We are not in HomePage!" unless @page.loaded?
 	rescue => e
