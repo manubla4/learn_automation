@@ -1,4 +1,4 @@
-Feature: search_flight
+Feature: sign_in
 
 	Background:
 		Given a new 'chrome' browser
@@ -6,7 +6,7 @@ Feature: search_flight
 	# POSITIVE
 
 	@test_case 
-	Scenario: Verify simple serarch 
+	Scenario: Verify sign in 
 		Given I navigate to homepage
 		When I insert a valid time range 
 		And I insert 'Madrid' as destination

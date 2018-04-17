@@ -7,6 +7,8 @@ Given(/^a new '(.*)' browser$/) do |browserName|
 				$browser = Selenium::WebDriver.for :ie
 			when "edge"
 				$browser = Selenium::WebDriver.for :edge
+			when "safari"
+				$browser = Selenium::WebDriver.for :safari
 			else
 				$browser = Selenium::WebDriver.for :chrome
 		end
@@ -18,7 +20,7 @@ end
 
 Given(/^I navigate to homepage$/) do
 	begin
-        $browser.navigate.to "https://www.phptravels.net/"
+        $browser.navigate.to "https://www.demoblaze.com/index.html"
         @page = HomePage.new $browser
 		fail "We are not in HomePage!" unless @page.loaded?
 	rescue => e
