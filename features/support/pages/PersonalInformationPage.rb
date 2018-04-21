@@ -13,7 +13,7 @@ class PersonalInformationPage
     end
 
     def verify_sign_up(name)      
-        browser.find_element(FIRSTNAME_FIELD).text.include?(name)
+        browser.find_element(FIRSTNAME_FIELD).attribute('value').include?(name)
     end
     
 
