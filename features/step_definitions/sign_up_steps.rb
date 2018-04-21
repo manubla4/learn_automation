@@ -32,7 +32,7 @@ end
 
 Then(/^I see '(.*)' in first name field$/) do |name|
 	begin
-		assert @accountinfopage.verify_sign_up(name)		
+		fail "Account not created" unless @accountinfopage.verify_sign_up(name)		
 	rescue => e
 		fail "Error in result. Error: #{e}"
 	end
