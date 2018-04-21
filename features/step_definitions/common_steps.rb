@@ -20,9 +20,9 @@ end
 
 Given(/^I navigate to homepage$/) do
 	begin
-        $browser.navigate.to "https://www.phptravels.net/"
-        @page = HomePage.new $browser
-		fail "We are not in HomePage!" unless @page.loaded?
+        $browser.navigate.to "http://opencart.abstracta.us/"
+        @homepage = HomePage.new $browser
+		fail "We are not in HomePage!" unless @homepage.loaded?
 	rescue => e
 		fail "Error opening page. Error : #{e}"
 	end
