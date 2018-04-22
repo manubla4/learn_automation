@@ -6,6 +6,7 @@ class HomePage
     LOGIN_BUTTON = {css: '[href="https://opencart.abstracta.us:443/index.php?route=account/login"]'}
     SEARCH_FIELD = {css: '[placeholder="Search"]'}
     SEARCH_BUTTON = {css: '.fa-search'}
+    NAVIGATE_TO_WISHLIST = {css: '[data-original-title="Add to Wish List"]'}
     
     attr_reader :browser
 
@@ -35,6 +36,13 @@ class HomePage
         @signinpage = SignInPage.new $browser
         fail "We are not in SignInPage!" unless @signinpage.loaded? 
         @signinpage
+    end
+
+    def navigate_to_wishlist
+        browser.find_element(NAVIGATE_TO_WISHLIST).click
+        @wishlistpage = Wishlist.new $browser
+        fail "We are not in Wishlist!" unless @wishlistpage.loaded?
+        @wishlistpage        
     end
 
     def loaded?
