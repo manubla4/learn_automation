@@ -5,6 +5,7 @@ class ProductPage
     ADD_CART_BUTTON = {css: '.btn#button-cart'}
     MY_CART_BUTTON = {css: '[href="http://opencart.abstracta.us:80/index.php?route=checkout/cart"]'}
     NAME_LABEL = {css: '.col-sm-4 h1'}
+    ADD_WISHLIST_BUTTON = {css: '.col-sm-3 [href="https://opencart.abstracta.us:443/index.php?route=account/wishlist"]'}
 
     attr_reader :browser
 
@@ -21,13 +22,17 @@ class ProductPage
         browser.find_element(ADD_CART_BUTTON).click
     end
 
+    def add_to_wishlist
+        browser.find_element(ADD_WISHLIST_BUTTON).click
+    end
+
     def navigate_to_cart
         browser.find_element(MY_CART_BUTTON).click
         @cartpage = CartPage.new $browser
         fail "We are not in CartPage!" unless @cartpage.loaded?
         @cartpage        
     end
-     
+
     def verify_name(name)	
         browser.find_element(NAME_LABEL).text.include?(name)
     end   
