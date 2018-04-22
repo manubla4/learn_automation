@@ -3,6 +3,8 @@ class HomePage
     
     MY_ACCOUNT_DROPDOWN = {css: '.dropdown-toggle[href="https://opencart.abstracta.us:443/index.php?route=account/account"]'}
     REGISTER_BUTTON = {css: '[href="https://opencart.abstracta.us:443/index.php?route=account/register"]'}
+    SEARCH_FIELD = {css: '[placeholder="Search"]'}
+    SEARCH_BUTTON = {css: '.fa-search'}
     
     attr_reader :browser
 
@@ -18,10 +20,16 @@ class HomePage
         @registerpage
     end
      
+    def search(name)
+        browser.find_element(SEARCH_FIELD).send_keys name
+        browser.find_element(SEARCH_BUTTON).click
+        @searchpage = SearchPage.new $browser
+        fail "We are not in SearchPage!" unless @searchpage.loaded?
+        @searchpage
+    end
 
     def loaded?
         browser.title.include?('Store')
-    end
-     
+    end 
 
   end
