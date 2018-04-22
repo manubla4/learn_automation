@@ -2,7 +2,7 @@
 class CartPage 
     
     NAME_LABEL = {css: 'form .text-left a'}
-    QTY_FIELD = {css: '[name="quantity[25440]"]'}
+    QTY_FIELD = {css: '.btn-block .form-control'}
 
     attr_reader :browser
 
