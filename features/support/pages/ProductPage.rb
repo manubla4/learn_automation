@@ -3,7 +3,8 @@ class ProductPage
     
     QTY_FIELD = {css: '#input-quantity'}
     ADD_CART_BUTTON = {css: '.btn#button-cart'}
-    MY_CART_BUTTON = {css: 'a .fa-shopping-cart'}
+    MY_CART_BUTTON = {css: '[href="http://opencart.abstracta.us:80/index.php?route=checkout/cart"]'}
+    NAME_LABEL = {css: '.col-sm-4 h1'}
 
     attr_reader :browser
 
@@ -27,5 +28,8 @@ class ProductPage
         @cartpage        
     end
      
+    def verify_name(name)	
+        browser.find_element(NAME_LABEL).text.include?(name)
+    end   
 
   end

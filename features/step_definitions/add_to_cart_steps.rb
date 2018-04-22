@@ -32,7 +32,7 @@ end
 
 When(/^I navigate to My Cart$/) do
 	begin
-		@cartpage = @productpage.navigate_to_cart 		
+		@cartpage = @productpage.navigate_to_cart	
 	rescue => e
 		fail "Error navigating to cart. Error: #{e}"
 	end
