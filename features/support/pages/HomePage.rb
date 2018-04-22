@@ -3,6 +3,7 @@ class HomePage
     
     MY_ACCOUNT_DROPDOWN = {css: '.dropdown-toggle[href="https://opencart.abstracta.us:443/index.php?route=account/account"]'}
     REGISTER_BUTTON = {css: '[href="https://opencart.abstracta.us:443/index.php?route=account/register"]'}
+    LOGIN_BUTTON = {css: '[href="https://opencart.abstracta.us:443/index.php?route=account/login"]'}
     SEARCH_FIELD = {css: '[placeholder="Search"]'}
     SEARCH_BUTTON = {css: '.fa-search'}
     
@@ -26,6 +27,14 @@ class HomePage
         @searchpage = SearchPage.new $browser
         fail "We are not in SearchPage!" unless @searchpage.loaded?
         @searchpage
+    end
+
+    def navigate_to_sign_in
+        browser.find_element(MY_ACCOUNT_DROPDOWN).click
+        browser.find_element(LOGIN_BUTTON).click
+        @signinpage = SignInPage.new $browser
+        fail "We are not in SignInPage!" unless @signinpage.loaded? 
+        @signinpage
     end
 
     def loaded?
